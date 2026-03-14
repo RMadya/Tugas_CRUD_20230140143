@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Manajemen KTP</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Sistem Manajemen KTP</h1>
+
+        <!-- Feedback Messages -->
+        <div id="message" class="message" style="display: none;"></div>
+
+        <!-- Section Form -->
+        <div class="card">
+            <h2 id="formTitle">Tambah Data KTP</h2>
+            <form id="ktpForm">
+                <input type="hidden" id="ktpId">
+                <div class="form-group">
+                    <label for="nomorKtp">Nomor KTP</label>
+                    <input type="text" id="nomorKtp" required minlength="16" maxlength="16" placeholder="Masukkan 16 digit Nomor KTP">
+                </div>
+                <div class="form-group">
+                    <label for="namaLengkap">Nama Lengkap</label>
+                    <input type="text" id="namaLengkap" required placeholder="Masukkan Nama Lengkap">
+                </div>
+                <div class="form-group">
+                    <label for="alamat">Alamat</label>
+                    <textarea id="alamat" rows="3" required placeholder="Masukkan Alamat"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="tanggalLahir">Tanggal Lahir</label>
+                    <input type="date" id="tanggalLahir" required>
+                </div>
+                <div class="form-group">
+                    <label for="jenisKelamin">Jenis Kelamin</label>
+                    <select id="jenisKelamin" required>
+                        <option value="">-- Pilih Jenis Kelamin --</option>
+                        <option value="Laki-Laki">Laki-Laki</option>
+                        <option value="Perempuan">Perempuan</option>
+                    </select>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" id="btnSave" class="btn btn-primary">Simpan</button>
+                    <button type="button" id="btnCancel" class="btn btn-secondary" style="display: none;">Batal Edit</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Section Table -->
+        <div class="card">
+            <h2>Daftar KTP</h2>
+            <div class="table-responsive">
+                <table id="ktpTable">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Nomor KTP</th>
+                            <th>Nama Lengkap</th>
+                            <th>Alamat</th>
+                            <th>Tanggal Lahir</th>
+                            <th>Jenis Kelamin</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Data will be loaded here via Ajax -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- JQuery Library -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Custom script -->
+    <script src="js/app.js"></script>
+</body>
+</html>
